@@ -1,0 +1,1 @@
+Knight's Travails → from [Project 2: Knight's Travails](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms)
