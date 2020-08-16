@@ -1,11 +1,10 @@
 class Knight
-    attr_accessor :position, :pos_moves, :parent, :children
+    attr_accessor :position, :pos_moves, :parent
 
     def initialize(pos, parent = nil)
         @position = generate_position(pos)
         @pos_moves = generate_pos_moves(pos)
         @parent = parent
-        @children = []
     end
 
     def generate_position(pos)

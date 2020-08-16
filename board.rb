@@ -1,29 +1,28 @@
 class Board
     attr_accessor :generated
 
-    def initialize(knight, destination)
-        @generated = generate_board(knight, destination)
+    def initialize(moves = [])
+        @generated = generate_board(moves)
     end
 
-    def generate_board(knight, destination)
+    def generate_board(moves)
         board = []
 
         for i in 0..7
             arr = []
-            y_position, x_position = knight.position
-            y_destination, x_destination = destination
 
             for j in 0..7
-                if i == y_position && j == x_position
-                    arr << 'K'
-                elsif i == y_destination && j == x_destination
-                    arr << 'D'
-                else
-                    arr << ' '
-                end
+                arr << ' '
             end
 
             board << arr
+        end
+
+        moves.each_with_index do |move, idx|
+            y = move[0]
+            x = move[1]
+
+            board[y][x] = "#{idx+1}"
         end
 
         board
